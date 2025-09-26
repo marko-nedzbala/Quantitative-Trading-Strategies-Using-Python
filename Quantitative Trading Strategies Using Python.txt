@@ -1,0 +1,167 @@
+
+10 Chapters
+
+
+
+https://github.com/Apress/Quantitative-Trading-Strategies-Using-Python/blob/main/Chapter_1.ipynb
+
+
+Chapter01
+Quantitative Trading: An Introduction
+
+Quantitative trading refers to the use of mathematical models and algorithms to analyze large datasets (structured or unstructured), identify consistent patterns and generate robust trading signals.
+
+4 categories for input data:
+1.) Market states
+2.) Financial news
+3.) Fundamentals
+4.) Technicals
+
+$ pip install yfinance
+import yfinance as yf
+msft = yf.Ticker('MSFT')
+msft.info                           
+
+Data needs to be referenced in the following way:
+data['Column Name']['Ticker'].values
+# example
+data['Open']['MSFT'].values
+
+
+
+Chapter02
+Electronic Market
+
+the electronic market operates on the basis of a discrete price grid, every market has a minimum tick size
+stocks = 1 cent increments
+currencies = pips
+rates = basis points (bps)
+
+price ladder: price grid is arranged from the smallest price to the largest price
+
+Singapore Exchange (SGX)
+
+Proprietary trading: allows financial institutions to generate profits by leveraging their own captial and expertise in market analysis
+Agency trading: focuses on providing execution services for clients, prioritizing the best execution of client orders
+
+Order Matching Systems
+rule-based: systems to execute the pair of trades if certain conditions are satisfied
+Order precedence:
+    Price precedence: orders with better prices are given priority over orders with worse prices
+    buying = higher bids have precedence, buy at higher prices
+    selling = lower asks have precedence, sell at lower prices
+
+    Time precedence: if 2 orders have the same price, order placed earlier takes precedence, "first-come, first-served"
+
+    Size precedence: when orders have the same price and same time, order with the larger size is given precedence, encourages larger orders and enhanced liquidity
+
+Some exchanges allow traders to specify whether their limit orders are to be displayed or not on the Limit Order Book (LOB), Lit (Displayed) or Unlit (Not Displayed)
+
+Rule precedence used by both exchanges is:
+    1.) Price
+    2.) Display
+    3.) Time
+
+Market order
+
+Limit order
+instructs the broker to buy/sell at the best price available only if the price is no worse than the price limit specified by the investor
+
+Stop order
+be default a stop order is a market order conditioned on a present stop price, becomes a market order as soon as the current market prices reaches or crosses the preset stop price.
+always executed in the direction that the asset price is moving, assuming the same movement will continue in the original direction
+
+downward movement, stop-loss order: stop order will be to sell at a preset price below the current market price, stop order will be will be to gain protection from a sudden drop, a sell-stop order that is always placed below the current market price and is typically used to limit a loss or protect a profit on the long stock position
+
+upward movement, a stop-entry order (buy-stop order): buy once a security reaches a preset price above the current market price, always place above the current market price
+
+basically if the market price reaches or corsses the stop price, issue a market order, otherwise keep checking the market price
+
+Stop-Limit Order
+submitted as a limit order, combines the features of a stop order and a limit order
+when the market prices reaches the preset stop price, the stop-limit order becomes a limit order that will be executed at the specified limit price or better
+
+Pegged Order
+allows the limit price to be dynamic, adjusting automatically based on a reference price
+
+Trailing Stop Order
+trails the change in price to protect your profit
+
+Market If Touched Order
+an order to buy/sell below/above the market, the order is held in the system until the trigger price is touched and then submitted as a market order if and when a specified price level is reached
+
+Data analysis of LOB
+https://etsin.fairdata.fi/dataset/73eb48d7-4dbc-4a10-a52a-da745b47a649
+
+
+
+Chapter03
+Forward and Futures Contacts
+
+The S&P 500 E-Mini futures contract is a financial derivative product that tracks the performance of the S&P 500 index
+
+Technical Indicators
+pip install yfinance ta
+
+
+
+Chapter04
+Understanding Risk and Return
+
+placeholder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
