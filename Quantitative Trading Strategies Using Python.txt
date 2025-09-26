@@ -108,36 +108,63 @@ pip install yfinance ta
 Chapter04
 Understanding Risk and Return
 
-placeholder
+good way to calculate cumuluative returns via a column
+R_t-1, t = (S_t) / (S_t-1)
+
+Terminal return
+the initial value compared to the final value
+R_0,T = [ (S_T) / (S_0) ] - 1
+
+Annualizing returns
+(1 + r/n) ^ (n * year)
 
 
 
+Chapter05
+Trend-Following Strategy
+
+Technical Indicators
+Moving Average
+
+calculate the moving average in the dataframe
+window3 = 20
+SMA2 = 'SMA-'+str(window3)
+df3 = df2.copy(deep=True)
+df3['SMA-' + SMA2] = df2['Close'].rolling(window3).mean()
 
 
 
+Chapter06
+Momentum Trading Strategy
+
+a trend-following strategy generates a trading signal if there is a crossover between the 2 moving averages
 
 
 
+Chapter07
+Backtesting a Trading Strategy
+ 
+Calmar ratio: the ratio between the annualized return of the trailing 36 months and the max drawdown over the same trailing 36 months
 
 
 
+Chapter08
+Statistical Arbitrage with Hypothesis Testing
+
+Pairs Trading
+Cointegration
+
+Converting to Z-scores
+z = (x - u) / o
+
+z = (mean - observed value) / standard deviation
+so in practice
+z = (mean of the distribution - observation) / standard deviation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Chapter09
+Optimizing Trading Strategies with Bayesian Optimization
 
 
 
